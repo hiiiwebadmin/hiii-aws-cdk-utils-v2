@@ -1,27 +1,25 @@
-import { awscdk } from "projen";
+import { awscdk } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
-  author: "hiiiwebadmin",
-  authorAddress: "webadmin@hiii.com.tw",
-  cdkVersion: "2.176.0",
-  defaultReleaseBranch: "main",
-  jsiiVersion: "~5.7.0",
-  name: "hiii-aws-cdk-utils-v2",
+  author: 'hiiiwebadmin',
+  authorAddress: 'webadmin@hiii.com.tw',
+  cdkVersion: '2.176.0',
+  defaultReleaseBranch: 'master',
+  majorVersion: 1,
+  name: 'hiii-aws-cdk-utils-v2',
   projenrcTs: true,
-  repositoryUrl: "https://github.com/hiiiwebadmin/hiii-aws-cdk-utils-v2.git",
-  description: "Aws CDK Construct Util Designed For Hiii.",
-  deps: ["aws-cdk-lib", "constructs"],
-  peerDeps: ["aws-cdk-lib", "constructs"],
-  devDeps: ["aws-cdk-lib", "constructs"],
-  keywords: ["cdk", "hiii"],
+  repositoryUrl: 'https://github.com/hiiiwebadmin/hiii-aws-cdk-utils-v2.git',
+  description: 'Aws CDK Construct Util Designed For Hiii.',
+  keywords: ['cdk', 'hiii'],
   npmignore: [
-    "cdk.out",
-    "cdk.context.json",
-    "yarn-error.log",
-    "dep.endabot.yml",
-    "website/public",
-    "images",
-    "docs",
-    "website",
+    'cdk.out',
+    'cdk.context.json',
+    'yarn-error.log',
+    'dep.endabot.yml',
+    'website/public',
+    'images',
+    'docs',
+    'website',
+    '.env',
   ],
 
   // deps: [],                /* Runtime dependencies of this module. */
@@ -30,11 +28,15 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // packageName: undefined,  /* The "name" in package.json. */
 });
 const common_exclude = [
-  "cdk.out",
-  "cdk.context.json",
-  "yarn-error.log",
-  "dep.endabot.yml",
-  "website/public",
+  'cdk.out',
+  'cdk.context.json',
+  'yarn-error.log',
+  'dep.endabot.yml',
+  'website/public',
+  'website',
+  '.env',
 ];
 project.gitignore.exclude(...common_exclude);
+project.addDevDeps('aws-cdk-lib@^2.176.0', 'constructs@^10.4.2');
+project.addPeerDeps('aws-cdk-lib@^2.176.0', 'constructs@^10.4.2');
 project.synth();

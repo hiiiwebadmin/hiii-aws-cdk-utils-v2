@@ -1,5 +1,5 @@
-import * as cdk from 'aws-cdk-lib/core';
 import * as path from 'path';
+import * as cdk from 'aws-cdk-lib/core';
 import * as hiii from './index';
 
 export class IntegTesting {

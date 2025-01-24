@@ -1,3 +1,4 @@
+import * as path from 'path';
 import * as acm from 'aws-cdk-lib/aws-certificatemanager';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import * as ecs from 'aws-cdk-lib/aws-ecs';
@@ -8,9 +9,7 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as cdk from 'aws-cdk-lib/core';
 import { Construct } from 'constructs';
-import * as path from 'path';
 import { getOrCreateVpc } from './common/util';
-
 
 
 export interface BaseFargateServiceProps {
